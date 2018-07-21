@@ -37,7 +37,7 @@ public class EmployeeController {
 			@PathVariable("areacode") String areacode) {
 
 		List<Employee> namelist = (List<Employee>) employeeService.findByempname(empname);
-		
+
 		return new ResponseEntity<List<Employee>>(namelist, HttpStatus.OK);
 
 	}
@@ -46,7 +46,7 @@ public class EmployeeController {
 	 * @return
 	 */
 
-	@RequestMapping(value = "/index", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/getAllEmp", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Employee>> getAllEmp() {
 		List<Employee> list = employeeService.getAllEmp();
 		return new ResponseEntity<List<Employee>>(list, HttpStatus.OK);
@@ -82,20 +82,5 @@ public class EmployeeController {
 		employeeService.deleteEmployee(empid);
 		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
-
-	/**
-	 * @param postalcode
-	 * @param obsolete
-	 * @return
-	 *//*
-		 * @RequestMapping(value = "/getEmpdata/{postalcode}/{obsolete}", method
-		 * = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-		 * public ResponseEntity<Employee>
-		 * getEmpdata(@PathVariable("postalcode") String postalcode,
-		 * 
-		 * @PathVariable("obsolete") Integer obsolete) { Employee list =
-		 * employeeService.getEmpdata(postalcode, obsolete); return new
-		 * ResponseEntity<Employee>(list, HttpStatus.OK); }
-		 */
 
 }

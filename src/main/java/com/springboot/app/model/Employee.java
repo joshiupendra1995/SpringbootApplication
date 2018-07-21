@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -41,15 +39,11 @@ public class Employee implements Serializable {
 	@Column(name = "areacode")
 	private String areacode;
 
-	@Column(name = "obsolete")
-	private Integer obsolete;
-
 	public Employee() {
 
 	}
 
-	public Employee(Long empid, String empname, String esalary, String address, String postalcode, String areacode,
-			Integer obsolete) {
+	public Employee(Long empid, String empname, String esalary, String address, String postalcode, String areacode) {
 		super();
 		this.empid = empid;
 		this.empname = empname;
@@ -57,7 +51,6 @@ public class Employee implements Serializable {
 		this.address = address;
 		this.postalcode = postalcode;
 		this.areacode = areacode;
-		this.obsolete = obsolete;
 
 	}
 
@@ -107,14 +100,6 @@ public class Employee implements Serializable {
 
 	public void setAreacode(String areacode) {
 		this.areacode = areacode;
-	}
-
-	public Integer getObsolete() {
-		return obsolete;
-	}
-
-	public void setObsolete(Integer obsolete) {
-		this.obsolete = obsolete;
 	}
 
 }

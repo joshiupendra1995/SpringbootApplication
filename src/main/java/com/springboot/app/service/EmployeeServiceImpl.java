@@ -48,15 +48,4 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	}
 
-	/*
-	 * @Override public Employee getEmpdata(String postalcode, Integer obsolete)
-	 * {
-	 * 
-	 * return employeeDao.getEmpdata(postalcode, obsolete); }
-	 */
-
-	
-	 /*@Override public List<Employee> getEmpByAreaCode(String areacode) {
-	 return employeeDao.getEmpByAreaCode(areacode); }
-	 */
 }
