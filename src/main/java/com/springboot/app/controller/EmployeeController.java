@@ -49,6 +49,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/getAllEmp", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Employee>> getAllEmp() {
 		List<Employee> list = employeeService.getAllEmp();
+                System.out.println("List employee" + list);
 		return new ResponseEntity<List<Employee>>(list, HttpStatus.OK);
 	}
 
