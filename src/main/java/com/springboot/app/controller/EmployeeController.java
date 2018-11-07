@@ -60,6 +60,7 @@ public class EmployeeController {
 	@PutMapping("/update")
 	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
 		employeeService.updateEmployee(employee);
+                System.out.println("Employee" + employee);
 		return new ResponseEntity<Employee>(employee, HttpStatus.OK);
 	}
 
