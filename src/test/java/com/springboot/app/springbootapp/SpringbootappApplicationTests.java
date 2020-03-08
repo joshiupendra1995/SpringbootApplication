@@ -11,6 +11,8 @@ public class SpringbootappApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		
+		//test case pending
 	}
 
 }
