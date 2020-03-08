@@ -10,7 +10,7 @@ import com.springboot.app.vo.EmployeeVO;
  * CreatedBy Upendra Joshi
  */
 @Component
-public class EmployeeMapper {
+public class EmployeeMapper extends Mapper{
 
 	/**
 	 * Gets the model.

@@ -60,7 +60,7 @@ public class EmployeeController {
 	 */
 	@PutMapping("/update")
 	public ResponseEntity<EmployeeVO> updateEmployeeVO(@RequestBody EmployeeVO EmployeeVO) {
-		employeeService.updateEmployeeVO(EmployeeVO);
+		employeeService.updateEmployee(EmployeeVO);
 
 		return new ResponseEntity<>(EmployeeVO, HttpStatus.OK);
 	}
@@ -71,7 +71,7 @@ public class EmployeeController {
 	 */
 	@PostMapping(value = "/add", produces = "text/plain")
 	public ResponseEntity<String> addEmployeeVO(@RequestBody EmployeeVO EmployeeVO) {
-		employeeService.addEmployeeVO(EmployeeVO);
+		employeeService.addEmployee(EmployeeVO);
 		return new ResponseEntity<>("Success", HttpStatus.OK);
 
 	}
@@ -82,7 +82,7 @@ public class EmployeeController {
 	 */
 	@DeleteMapping(value = "/delete/{empid}", produces = "text/plain")
 	public ResponseEntity<String> deleteEmployeeVO(@PathVariable("empid") Long empid) {
-		employeeService.deleteEmployeeVO(empid);
+		employeeService.deleteEmployee(empid);
 		return new ResponseEntity<>("Success", HttpStatus.OK);
 	}
 

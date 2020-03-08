@@ -42,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	 */
 	@Override
 	public void updateEmployee(EmployeeVO employeeVO) {
-		employeeDao.saveAndFlush(employeeMapper.getModel(employeeVO));
+		employeeDao.save(employeeMapper.getModel(employeeVO));
 	}
 
 	/*
@@ -65,13 +65,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<EmployeeVO> getAllEmp() {
 		List<Employee> empList = employeeDao.findAll();
-		List<EmployeeVO> empVOList = new ArrayList<>();
-
-		empList.forEach(emp -> {
-			empVOList.add(employeeMapper.getBO(emp));
-		});
-
-		return empVOList;
+		
+		return employeeMapper.getBOList(empList);
 	}
 
 	/*
