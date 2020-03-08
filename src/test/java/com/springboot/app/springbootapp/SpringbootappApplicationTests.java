@@ -12,7 +12,7 @@ public class SpringbootappApplicationTests {
 	@Test
 	public void contextLoads() {
 		
-		//test case pending with mockito polling
+		//test case pending with mockito polling jenkins
 	}
 
 }
