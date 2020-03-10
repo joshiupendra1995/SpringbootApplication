@@ -1,50 +1,50 @@
 package com.springboot.app.mapper;
 
-import org.springframework.stereotype.Component;
+import java.util.List;
+
+import org.mapstruct.Mapper;
 
 import com.springboot.app.model.Employee;
 import com.springboot.app.vo.EmployeeVO;
 
-
 /**
  * CreatedBy Upendra Joshi
  */
-@Component
-public class EmployeeMapper extends Mapper{
+@Mapper
+public interface EmployeeMapper {
 
 	/**
 	 * Gets the model.
 	 *
-	 * @param employeeVO the employee VO
+	 * @param employeeVO
+	 *            the employee VO
 	 * @return the model
 	 */
-	public Employee getModel(EmployeeVO employeeVO) {
-
-		Employee employee = new Employee();
-		employee.setAddress(employeeVO.getAddress());
-		employee.setAreacode(employeeVO.getAreacode());
-		employee.setEmpid(employeeVO.getEmpid());
-		employee.setEmpname(employeeVO.getEmpname());
-		employee.setEsalary(employeeVO.getEsalary());
-		employee.setPostalcode(employeeVO.getPostalcode());
-		return employee;
-	}
+	public Employee getModel(EmployeeVO employeeVO);
 
 	/**
 	 * Gets the bo.
 	 *
-	 * @param employee the employee
+	 * @param employee
+	 *            the employee
 	 * @return the bo
 	 */
-	public EmployeeVO getBO(Employee employee) {
+	public EmployeeVO getBO(Employee employee);
 
-		EmployeeVO employeeVO = new EmployeeVO();
-		employeeVO.setAddress(employee.getAddress());
-		employeeVO.setAreacode(employee.getAreacode());
-		employeeVO.setEmpid(employee.getEmpid());
-		employeeVO.setEmpname(employee.getEmpname());
-		employeeVO.setEsalary(employee.getEsalary());
-		employeeVO.setPostalcode(employee.getPostalcode());
-		return employeeVO;
-	}
+	/**
+	 * Gets the model list.
+	 *
+	 * @param employeeList
+	 *            the employee list
+	 * @return the model list
+	 */
+	public List<Employee> getModelList(List<EmployeeVO> employeeList);
+
+	/**
+	 * Gets the BO list.
+	 *
+	 * @param employeeList the employee list
+	 * @return the BO list
+	 */
+	public List<EmployeeVO> getBOList(List<Employee> employeeList);
 }

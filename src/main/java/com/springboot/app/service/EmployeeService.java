@@ -10,7 +10,7 @@ public interface EmployeeService {
 
 	public void updateEmployee(EmployeeVO employeeVO);
 
-	List<EmployeeVO> findByempname(String empname);
+	List<EmployeeVO> findByEmpnameAndAreacode(String empName,String areaCode);
 
 	List<EmployeeVO> getAllEmp();
 

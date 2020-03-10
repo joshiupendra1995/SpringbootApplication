@@ -65,7 +65,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<EmployeeVO> getAllEmp() {
 		List<Employee> empList = employeeDao.findAll();
-		
+
 		return employeeMapper.getBOList(empList);
 	}
 
@@ -76,15 +76,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	 * String)
 	 */
 	@Override
-	public List<EmployeeVO> findByempname(String empname) {
-		List<Employee> empList = employeeDao.findByempname(empname);
-		List<EmployeeVO> empVOList = new ArrayList<>();
+	public List<EmployeeVO> findByEmpnameAndAreacode(String empName, String areaCode) {
+		List<Employee> empList = employeeDao.findByEmpnameAndAreacode(empName, areaCode);
 
-		empList.forEach(emp -> {
-			empVOList.add(employeeMapper.getBO(emp));
-		});
-
-		return empVOList;
+		return employeeMapper.getBOList(empList);
 
 	}
 

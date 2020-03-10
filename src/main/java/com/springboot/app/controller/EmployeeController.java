@@ -36,9 +36,9 @@ public class EmployeeController {
 	 */
 	@GetMapping("/getdata/{empname}/{areacode}")
 	public ResponseEntity<List<EmployeeVO>> getEmpByName(@PathVariable("empname") String empname,
-			@PathVariable("areacode") String areacode) {
+			@PathVariable("areacode") String areaCode) {
 
-		List<EmployeeVO> namelist = employeeService.findByempname(empname);
+		List<EmployeeVO> namelist = employeeService.findByEmpnameAndAreacode(empname, areaCode);
 
 		return new ResponseEntity<>(namelist, HttpStatus.OK);
 
