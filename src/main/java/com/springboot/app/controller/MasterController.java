@@ -7,5 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/master")
 public class MasterController {
 
-	
+  @GetMapping
+	public List<IsinVO> getAllIsins(){
+
+		return null;
+		
+	}
+
+
 }
