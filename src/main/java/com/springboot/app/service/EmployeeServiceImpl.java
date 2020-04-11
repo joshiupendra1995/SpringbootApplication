@@ -1,6 +1,5 @@
 package com.springboot.app.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private EmployeeDao employeeDao;
 
-	@Autowired
+	//@Autowired
 	private EmployeeMapper employeeMapper;
 
 	/*
@@ -65,6 +64,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<EmployeeVO> getAllEmp() {
 		List<Employee> empList = employeeDao.findAll();
+		
+		System.out.println(empList);
 
 		return employeeMapper.getBOList(empList);
 	}

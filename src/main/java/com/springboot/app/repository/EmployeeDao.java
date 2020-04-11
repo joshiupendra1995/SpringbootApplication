@@ -13,7 +13,7 @@ public interface EmployeeDao extends JpaRepository<Employee, Long> {
 	 * @param empname
 	 * @return
 	 */
-	List<Employee> findByempname(String empname);
+	List<Employee> findByEmpname(String empname);
 
 	/**
 	 * Find by empname and areacode.

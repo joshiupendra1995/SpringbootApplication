@@ -102,4 +102,10 @@ public class Employee implements Serializable {
 		this.areacode = areacode;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [empid=" + empid + ", empname=" + empname + ", esalary=" + esalary + ", address=" + address
+				+ ", postalcode=" + postalcode + ", areacode=" + areacode + "]";
+	}
+
 }
