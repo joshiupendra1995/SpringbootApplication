@@ -1,8 +1,8 @@
 package com.springboot.app.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.app.service.EmployeeService;
 import com.springboot.app.vo.EmployeeVO;
 
 /**
@@ -26,9 +25,9 @@ import com.springboot.app.vo.EmployeeVO;
 @RequestMapping("/emp")
 public class EmployeeController {
 
-	@Autowired
-	private EmployeeService employeeService;
-
+	/*
+	 * @Autowired private EmployeeService employeeService;
+	 */
 	/**
 	 * @param empname
 	 * @return
@@ -38,7 +37,8 @@ public class EmployeeController {
 	public ResponseEntity<List<EmployeeVO>> getEmpByName(@PathVariable("empname") String empname,
 			@PathVariable("areacode") String areaCode) {
 
-		List<EmployeeVO> namelist = employeeService.findByEmpnameAndAreacode(empname, areaCode);
+		List<EmployeeVO> namelist = new ArrayList<>();
+		// employeeService.findByEmpnameAndAreacode(empname, areaCode);
 
 		return new ResponseEntity<>(namelist, HttpStatus.OK);
 
@@ -50,7 +50,8 @@ public class EmployeeController {
 
 	@GetMapping(value = "/getAllEmp", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<EmployeeVO>> getAllEmp() {
-		List<EmployeeVO> list = employeeService.getAllEmp();
+		List<EmployeeVO> list = new ArrayList<>();
+		list.add(new EmployeeVO(1L, "upendra", "5000", "Pune", "4110350", "022"));
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 
@@ -60,7 +61,7 @@ public class EmployeeController {
 	 */
 	@PutMapping("/update")
 	public ResponseEntity<EmployeeVO> updateEmployeeVO(@RequestBody EmployeeVO EmployeeVO) {
-		employeeService.updateEmployee(EmployeeVO);
+		//employeeService.updateEmployee(EmployeeVO);
 
 		return new ResponseEntity<>(EmployeeVO, HttpStatus.OK);
 	}
@@ -71,7 +72,7 @@ public class EmployeeController {
 	 */
 	@PostMapping(value = "/add", produces = "text/plain")
 	public ResponseEntity<String> addEmployeeVO(@RequestBody EmployeeVO EmployeeVO) {
-		employeeService.addEmployee(EmployeeVO);
+		//employeeService.addEmployee(EmployeeVO);
 		return new ResponseEntity<>("Success", HttpStatus.OK);
 
 	}
@@ -82,7 +83,7 @@ public class EmployeeController {
 	 */
 	@DeleteMapping(value = "/delete/{empid}", produces = "text/plain")
 	public ResponseEntity<String> deleteEmployeeVO(@PathVariable("empid") Long empid) {
-		employeeService.deleteEmployee(empid);
+		//employeeService.deleteEmployee(empid);
 		return new ResponseEntity<>("Success", HttpStatus.OK);
 	}
 
