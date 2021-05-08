@@ -2,16 +2,9 @@ package com.springboot.app.vo;
 
 import java.math.BigDecimal;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 /**
  * CreatedBy Upendra
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class EmployeeVO {
 
 	/** The empid. */
@@ -25,5 +18,49 @@ public class EmployeeVO {
 
 	/** The address. */
 	private String address;
+
+	public EmployeeVO() {
+
+	}
+
+	public EmployeeVO(Long empId, String empname, BigDecimal esalary, String address) {
+		super();
+		this.empId = empId;
+		this.empname = empname;
+		this.esalary = esalary;
+		this.address = address;
+	}
+
+	public Long getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(Long empId) {
+		this.empId = empId;
+	}
+
+	public String getEmpname() {
+		return empname;
+	}
+
+	public void setEmpname(String empname) {
+		this.empname = empname;
+	}
+
+	public BigDecimal getEsalary() {
+		return esalary;
+	}
+
+	public void setEsalary(BigDecimal esalary) {
+		this.esalary = esalary;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
 }
