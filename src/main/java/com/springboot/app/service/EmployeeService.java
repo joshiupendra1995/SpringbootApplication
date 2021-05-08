@@ -8,12 +8,9 @@ public interface EmployeeService {
 
 	public void addEmployee(EmployeeVO employeeVO);
 
-	public void updateEmployee(EmployeeVO employeeVO);
+	public List<EmployeeVO> getEmployees();
 
-	List<EmployeeVO> findByEmpnameAndAreacode(String empName,String areaCode);
+	public EmployeeVO getEmployeeById(Long id);
 
-	List<EmployeeVO> getAllEmp();
-
-	public void deleteEmployee(Long empid);
 
 }

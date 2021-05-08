@@ -54,19 +54,12 @@
 			<version>1.1.0.Final</version>
 		</dependency>
 
+
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4-1206-jdbc42</version>
 		</dependency>
-
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-data-redis</artifactId> 
-			</dependency> -->
-
-
-		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-		<!-- <dependency> <groupId>org.postgresql</groupId> <artifactId>postgresql</artifactId> 
-			<version>9.4-1206-jdbc42</version> </dependency> -->
 
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -79,6 +72,12 @@
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.6.1</version>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.20</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
